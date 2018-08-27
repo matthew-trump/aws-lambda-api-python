@@ -1,1 +1,55 @@
-
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Functions for the HQU Backend
+Resources:
+  GetQuizScoreFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: get-quiz-score.handler
+      Runtime: nodejs6.10
+      CodeUri: ./
+      Policies: AmazonDynamoDBReadOnlyAccess
+      Events:
+        GetQuizScore:
+          Type: Api
+          Properties:
+            Path: /GetQuizScore
+            Method: GET
+  SaveQuestionResponseFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: save-question-response.handler
+      Runtime: nodejs6.10
+      CodeUri: ./
+      Policies: AmazonDynamoDBFullAccess
+      Events:
+        SaveQuestionResponse:
+          Type: Api
+          Properties:
+            Path: /SaveQuestionResponse
+            Method: POST
+  StartNewQuizFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: start-new-quiz.handler
+      Runtime: nodejs6.10
+      CodeUri: ./
+      Policies: AmazonDynamoDBFullAccess
+      Events:
+        StartNewQuiz:
+          Type: Api
+          Properties:
+            Path: /StartNewQuiz
+            Method: POST
+  HQUBackendDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties: 
+       AttributeDefinitions: 
+         - AttributeName: id
+           AttributeType: S
+       KeySchema: 
+         - AttributeName: id
+           KeyType: HASH
+       ProvisionedThroughput: 
+         ReadCapacityUnits: 5
+         WriteCapacityUnits: 5
