@@ -1,4 +1,6 @@
-import boto3;
-
 def handler(event, context):
-  return { "statusCode": '200', "body": "OK" }
+  message = 'Hello {} {}!'.format(event['first_name'], 
+                                    event['last_name'])  
+  return { 
+        'message' : message
+  }
