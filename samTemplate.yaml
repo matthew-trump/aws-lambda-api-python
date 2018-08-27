@@ -5,8 +5,8 @@ Resources:
   GetQuizScoreFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: get-quiz-score.handler
-      Runtime: nodejs6.10
+      Handler: get_quiz_score.handler
+      Runtime: python3.6
       CodeUri: ./
       Policies: AmazonDynamoDBReadOnlyAccess
       Events:
@@ -18,8 +18,8 @@ Resources:
   SaveQuestionResponseFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: save-question-response.handler
-      Runtime: nodejs6.10
+      Handler: save_question_response.handler
+      Runtime: python3.6
       CodeUri: ./
       Policies: AmazonDynamoDBFullAccess
       Events:
@@ -27,12 +27,12 @@ Resources:
           Type: Api
           Properties:
             Path: /SaveQuestionResponse
-            Method: POST
+            Method: GET
   StartNewQuizFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: start-new-quiz.handler
-      Runtime: nodejs6.10
+      Handler: start_new_quiz.handler
+      Runtime: python3.6
       CodeUri: ./
       Policies: AmazonDynamoDBFullAccess
       Events:
@@ -40,16 +40,4 @@ Resources:
           Type: Api
           Properties:
             Path: /StartNewQuiz
-            Method: POST
-  HQUBackendDBTable:
-    Type: AWS::DynamoDB::Table
-    Properties: 
-       AttributeDefinitions: 
-         - AttributeName: id
-           AttributeType: S
-       KeySchema: 
-         - AttributeName: id
-           KeyType: HASH
-       ProvisionedThroughput: 
-         ReadCapacityUnits: 5
-         WriteCapacityUnits: 5
+            Method: GET
