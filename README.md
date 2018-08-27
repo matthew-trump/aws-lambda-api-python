@@ -3,9 +3,7 @@ This is the set of lambda functions that will be used by the DialogFlow agent in
 
 
 * Sign in to the AWS Management Console and open the AWS CodePipeline console at http://console.aws.amazon.com/codepipeline.
-* On the Welcome page, choose **Create pipeline**.
-
-If this is your first time using AWS CodePipeline, choose **Get Started Now**.
+* On the Welcome page, choose **Create pipeline**. (If this is your first time using AWS CodePipeline, choose **Get Started Now**).
 * On the **Step 1: Name page**, in Pipeline name, type **HQUTriviaApiBackend**, and then choose **Next step**.
 
 * On the **Step 2: Source page**, in the Source provider drop-down list, choose **Github**, and then choose **Next step**.
