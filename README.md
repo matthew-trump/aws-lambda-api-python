@@ -39,3 +39,20 @@ This is the set of lambda functions that will be used by the DialogFlow agent in
 
 * On the **Step 5: Service Role** page,
 * On the **Step 6: Review page**, choose **Create pipeline**.
+
+### Edit Pipeline to deploy change set
+* Click **Edit pipeline**.
+* Click + to add a stage at the bottom of the pipeline. 
+* For the name of the new action, type **HQUTriviaApiBackendChangeSet**
+* Click + to add an action to this new stage.
+* For **Action category** choose **Deploy**
+* For **Action name**, type **HQUTriviaApiBackendDeployChangeSetAction**.
+* For **Deployment provider**, choose **AWS CloudFormation**.
+* For **Action mode**, choose **Execute a change set**.
+* For **Stack name**, choose **HQUTriviaApiBackendStack**.
+* For **Change set name**, choose **HQUTriviaApiBackendChangeSet**.
+* Click **Add action**.
+* At the next screen, click **Save pipeline changes**.
+
+
+
