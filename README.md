@@ -1,6 +1,7 @@
 # hqu-trivia-api-backend
 This is the set of lambda functions that will be used by the DialogFlow agent in the HQU Trivia application for Google Assistant. 
 
+## Installation
 
 * Sign in to the AWS Management Console and open the AWS CodePipeline console at http://console.aws.amazon.com/codepipeline.
 * On the Welcome page, choose **Create pipeline**. (If this is your first time using AWS CodePipeline, choose **Get Started Now**).
