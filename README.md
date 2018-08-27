@@ -19,8 +19,8 @@ This is the set of lambda functions that will be used by the DialogFlow agent in
 
 * On the **Step 3: Build** page,  choose **AWS CodeBuild**.
 * Choose **Create a new build project**.
+* For **Application name**, type **HQUTriviaApiBackendBuild**.
 * For **Environment image**, choose **Use an image managed by AWS CodeBuild**.
-
 * For **Operating System**, choose **Ubuntu**.
 * For **Runtime**, choose **Python**.
 * For **Version**, choose **aws/codebuild/python:3.6.5**.
@@ -29,7 +29,13 @@ This is the set of lambda functions that will be used by the DialogFlow agent in
 * Choose **Save build project**.
 * Once build is saved, choose **Next step**.
 * On the **Step 4: Deploy** page, from the **Deployment provider** drop-down list, choose **AWS CloudFormation**.
-* In **Application name**, type **HQUTriviaApiBackendBuild**.
+* For **Action mode**, choose **Create or replace a change set**.
+* For **Stack name**, type **HQUTriviaApiBackendStack**.
+* For **Change set name**, type **HQUTriviaApiBackendChangeSet**.
+* For **Template file**, type **outputSamTemplate.yaml**.
+* For **Capabilities**, choose **CAPABILITY_IAM**.
+* For **Role name**, choose
 * Choose **Next step**.
+
 * On the **Step 5: Service Role** page,
 * On the **Step 6: Review page**, choose **Create pipeline**.
