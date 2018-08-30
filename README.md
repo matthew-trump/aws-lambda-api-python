@@ -5,7 +5,7 @@ This is the set of lambda functions that will be used by the DialogFlow agent in
 
 This is the temporary API for development. It can be used for simple testing of end to end. 
 
-Note this WILL change at some point, even during testing, so I'll be providing updated docs as need. In particular the red parts will certainly change (hashed unique id for AWS domain name will change, and also 'Stage' will become 'Prod' at some point). 
+Note this WILL change at some point, even during testing, so I'll be providing updated docs as need. In particular the hashed unique id part of the AWS domain name (e.g. 6d9kid0a9) will change, and also 'Stage' will become 'Prod' at some point. 
 
 We may of course need other calls depending on other client requirements that may pop up. So long as we're collecting the right data along the way and storing it properly, we should find it fairly straightforward to give stats and comparisons by other operations.
 
