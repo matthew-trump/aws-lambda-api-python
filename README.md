@@ -1,6 +1,27 @@
 # hqu-trivia-api-backend
 This is the set of lambda functions that will be used by the DialogFlow agent in the HQU Trivia application for Google Assistant. 
 
+## API
+
+This is the temporary API for development. It can be used for simple testing of end to end. 
+
+Note this WILL change at some point, even during testing, so I'll be providing updated docs as need. In particular the red parts will certainly change (hashed unique id for AWS domain name will change, and also 'Stage' will become 'Prod' at some point). 
+
+We may of course need other calls depending on other client requirements that may pop up. So long as we're collecting the right data along the way and storing it properly, we should find it fairly straightforward to give stats and comparisons by other operations.
+
+For testing, the two POST calls, for now simply send a body as a serialized json object of the params{ userId : 1, sessionId: 2}.
+
+For the GET call, add query string as normal, i.e. 
+?userId=1&sessionId=2. 
+
+Param values are arbitrary for more. Params are actually more extensive than this for the POST calls, but since nothing is implemented in db for now, don't worry about others, or the values of the ones you send (i.e. can use dummy values for params for now).
+
+POST https://c6d9kid0a9.execute-api.us-west-2.amazonaws.com/Stage/StartNewQuiz
+
+POST https://c6d9kid0a9.execute-api.us-west-2.amazonaws.com/Stage/SaveQuestionResponse
+
+GET https://c6d9kid0a9.execute-api.us-west-2.amazonaws.com/Stage/GetQuizScore 
+
 ## Installation
 
 ### Create the S3 Bucket
