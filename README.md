@@ -26,7 +26,11 @@ GET https://c6d9kid0a9.execute-api.us-west-2.amazonaws.com/Stage/GetQuizScore
 
 ### Create the S3 Bucket
 
+Create the S3 bucket that will be used below.
+
 ### Create the IAM Role
+
+Create necessary permissions for Pipeline to be built.
 
 ### Create the Pipeline
 
