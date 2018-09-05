@@ -7,7 +7,8 @@ phases:
       - sudo apt-get update
       - sudo apt-get --assume-yes install libmysqlclient18
       - sudo apt-get --assume-yes install python3-pip
-      - sudo pip3 install mysql-connector
+      - mkdir libraries
+      - sudo pip3 install 'mysql_connector_python<8.1' -t libraries
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket brigade-hqu-alpha-2 --output-template-file outputSamTemplate.yaml
                                   
 artifacts:
