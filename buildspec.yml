@@ -5,7 +5,7 @@ phases:
       - pwd
       - ls
       - sudo apt-get update
-      - sudo apt-get install libmysqlclient18
+      - sudo apt-get --assume-yes install libmysqlclient18
       - sudo pip-3.6 install mysql-connector
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket brigade-hqu-alpha-2 --output-template-file outputSamTemplate.yaml
                                   
