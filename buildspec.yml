@@ -4,6 +4,8 @@ phases:
     commands:
       - pwd
       - ls
+      - sudo yum install mysql-devel
+      - sudo pip-3.6 install mysql-connector
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket brigade-hqu-alpha-2 --output-template-file outputSamTemplate.yaml
                                   
 artifacts:
