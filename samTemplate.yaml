@@ -2,6 +2,19 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Functions for the HQU Backend
 Resources:
+  TestDbFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: test_db_connection.handler
+      Runtime: python3.6
+      CodeUri: ./
+      Policies: AmazonRDSFullAccess
+      Events:
+        TestDbConnection:
+          Type: Api
+          Properties:
+            Path: /TestDbConnection
+            Method: GET
   GetQuizScoreFunction:
     Type: AWS::Serverless::Function
     Properties:
