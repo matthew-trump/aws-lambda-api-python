@@ -1,5 +1,6 @@
 import boto3;
 import mysql.connector;
+import config;
 
 def handler(event, context):
  
