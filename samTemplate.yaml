@@ -8,6 +8,13 @@ Resources:
       Handler: test_db_connection.handler
       Runtime: python3.6
       CodeUri: ./
+      Environment:
+        Variables:
+          DATABASE_HOST: hqniversity-trivia-db.cyiz2ptceqng.us-west-2.rds.amazonaws.com
+          DATABASE_USER: web_user
+          DATABASE_PASSWORD: eagle1
+          DATABASE_DB_NAME: TriviaAssistant
+      FunctionName: TestDbConnection
       Policies: AmazonRDSFullAccess
       Events:
         TestDbConnection:
