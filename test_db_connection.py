@@ -3,7 +3,7 @@ import mysql.connector;
 import config;
 
 def handler(event, context):
-    all_labels = ['alpha','beta','gamma','delta]
+    all_labels = ['alpha','beta','gamma','delta']
     csv_labels = ", ".join(all_labels)
     print("Detect_labels finished. Key: [%s], Labels: [%s]" % (key, csv_labels))
 
