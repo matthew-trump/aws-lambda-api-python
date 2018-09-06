@@ -5,8 +5,9 @@ import config;
 def handler(event, context):
     all_labels = ['alpha','beta','gamma','delta']
     csv_labels = ", ".join(all_labels)
-    print("Detect_labels finished. Key: [%s], Labels: [%s]" % (key, csv_labels))
-
+    key        = "KEY"
+    print("Attempting database connection...")
+    
     conn = mysql.connector.connect(user=config.DATABASE_USER, password=config.DATABASE_PASSWORD,
                                    host=config.DATABASE_HOST,
                                    database=config.DATABASE_DB_NAME)
