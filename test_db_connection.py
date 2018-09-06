@@ -13,7 +13,7 @@ def handler(event, context):
                                    database=config.DATABASE_DB_NAME)
     cursor = conn.cursor(dictionary=True)
     cursor.execute("""SELECT object_key, description, labels, created_datetime
-                      FROM photo""", (key,))
+                      FROM photo""")
     result = cursor.fetchone()
 
     cursor.close()
