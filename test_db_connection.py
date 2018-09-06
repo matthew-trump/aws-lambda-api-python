@@ -7,7 +7,7 @@ import random;
 def handler(event, context):
     all_labels = ['cow','animal','beautiful']
     csv_labels = ", ".join(all_labels)
-    key        = ''.join(random.choices(string.ascii_uppercase + string.digits, k=N))
+    key        = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
     description = "a mighty cow"
     
     print("Attempting database connection...")
