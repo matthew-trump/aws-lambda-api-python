@@ -30,5 +30,5 @@ def handler(event, context):
     #return True
     return {
         "statusCode": '200',
-        "body": 'It works--connected '+result
+        "body": 'It works--connected '+str(result)
     }
