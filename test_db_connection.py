@@ -23,12 +23,12 @@ def handler(event, context):
     cursor = conn.cursor(dictionary=True)
     cursor.execute("""SELECT object_key, description, labels, created_datetime
                       FROM photo""")
+   
     result = cursor.fetchone()
-
     cursor.close()
     conn.close()
     #return True
     return {
         "statusCode": '200',
-        "body": 'It works--connected'
+        "body": 'It works--connected '+result
     }
