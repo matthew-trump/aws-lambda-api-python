@@ -1,15 +1,17 @@
 # hq-lambda-api-python
-This is a python implementatin of the AWS Lambda functions and API Gateway that will be accessed by the HQ Trivia Assistant DialogFlow agent. 
+This is a python implementation of the AWS Lambda functions and API Gateway that will be accessed by the HQ Trivia Assistant DialogFlow agent. 
+
+The code here is thus used only in an AWS-based configured of the application backend.
 
 ## Usage
 
-This repo is the one that is accessed by the CodeBuild project in pipeline.yaml within [hq-cloudformation-templates]. As such there is no set-up process per se, as it this is handled during the creation of the CloudFormation stack. No additional resources need to be created, other than the ones provisioned in the CloudFormation template. The CodeBuild project is specifically designed to pull from **master** branch of this repo.
+This repo is the one that is accessed by the CodeBuild project in pipeline.yaml within **hq-cloudformation-templates**. As such there is no set-up process per se, as it this is handled during the creation of the CloudFormation stack. No additional resources need to be created, other than the ones provisioned in the CloudFormation template. 
 
-Note that if the CodeBuild project in the pipeline is configured with this repo as its source, then any change to the master branch   
+The CodeBuild project is specifically designed to pull from the tip of the **master** branch of this repo, whenever it is updated. Thus any change to **any** file of the the master branch will result in a new build process being kicked off within the CodePipeline project on AWS. 
 
-Note that the Github user embedded in that file needs to have READ access to this repo in order for the pipeline to access the source files.
+Note that the Github user embedded in the pipeline.yaml file in **hq-cloudformation-templates** needs to have authenticated READ access to *this* repo in order for the pipeline to access the source files here, and to create/update the Lambda functions.
 
-Note as well that if the CodeBuild project that uses this repo is set-up with the pipeline.yaml template, as per the directions in the repo hq-cloudformation-templates, then the buildspec.yaml in this repo is *not* used, but is bypassed by an embedded buildscript within pipeline.yaml (this is done in order to provide proper substitution of parameter variables in the build script, which should only be done at the time that the CloudFormation template is run. The buildspec.yaml is provided here only as a reference in such case, and may not reflect the actual build process as configured in the CodePipeline project.
+Note as well that the **buildspec.yaml** in this repo is *not* used by CodeBuild, but is bypassed by an embedded build script within pipeline.yaml (this is done in order to provide proper substitution of parameter variables in the build script, which should only be done at the time that the CloudFormation template is run. The buildspec.yaml is provided here only as a reference in such case, and may not reflect the actual build process as configured in the CodePipeline project.
 
 ## Usage of API
 
