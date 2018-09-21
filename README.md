@@ -1,5 +1,9 @@
-# hqu-trivia-api-backend
-This is the set of lambda functions that will be used by the DialogFlow agent in the HQU Trivia application for Google Assistant. 
+# hq-lambda-api-python
+This is a python implementatin of the AWS Lambda functions and API Gateway that will be accessed by the HQ Trivia Assistant DialogFlow agent. 
+
+Note that this repo is the one that is accessed by the CodeBuild project in pipeline.yaml within hq-cloudformation-templates. The Github user embedded in that file needs to have READ access to this repo.
+
+Note as well that if the CodeBuild project that uses this repo is set-up with the pipeline.yaml template, as per the directions in the repo hq-cloudformation-templates, then the buildspec.yaml in this repo is not used, but is bypassed by an embedded buildscript within pipeline.yaml (this is done in order to provide proper substitution of parameter variables in the build script, which should only be done at the time that the CloudFormation template is run. The buildspec.yaml is provided here only as a reference in such case, and may not reflect the actual build process as configured in the CodePipeline project.
 
 ## Usage of API
 
