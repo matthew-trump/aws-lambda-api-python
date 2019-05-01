@@ -1,11 +1,11 @@
-# hq-lambda-api-python
-This is a python implementation of the AWS Lambda functions and API Gateway that will be accessed by the HQ Trivia Assistant DialogFlow agent. 
+# AWS Lambda Python Example
+This is a python implementation of the AWS Lambda functions and API Gateway that was used in testing for a commercial trivia appliation.
 
 The code here is thus used only in an AWS-based configured of the application backend.
 
 ## Usage
 
-This repo is the one that is accessed by the CodeBuild project in pipeline.yaml within **hq-cloudformation-templates**. As such there is no set-up process per se, as it this is handled during the creation of the CloudFormation stack. No additional resources need to be created, other than the ones provisioned in the CloudFormation template. 
+This repo is the one that is accessed by the CodeBuild project in pipeline.yaml within **aws-cloudformation-quizzes-example**. As such there is no set-up process per se, as it this is handled during the creation of the CloudFormation stack. No additional resources need to be created, other than the ones provisioned in the CloudFormation template. 
 
 The CodeBuild project is specifically designed to pull from the tip of the **master** branch of this repo, whenever it is updated. Thus any change to **any** file of the the master branch will result in a new build process being kicked off within the CodePipeline project on AWS. 
 
